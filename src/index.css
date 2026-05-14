@@ -1,8 +1,179 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
-/* 全局背景与色调 */
+/* 全局背景与色调 - 默认浅色 */
 html {
   background: #f5f7fa;
+  transition: background 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background: radial-gradient(ellipse at 20% 50%, rgba(120, 80, 200, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(100, 150, 200, 0.05) 0%, transparent 60%),
+              #f5f7fa;
+  min-height: 100vh;
+  color: #1f2937;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 深色模式 */
+html.dark {
+  background: #0a0a1a;
+}
+
+html.dark body {
+  background: radial-gradient(ellipse at 20% 50%, rgba(120, 80, 200, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(200, 100, 100, 0.05) 0%, transparent 60%),
+              #0a0a1a;
+  color: #f9fafb;
+}
+
+html.dark ::-webkit-scrollbar-track { background: #0a0a1a; }
+html.dark ::-webkit-scrollbar-thumb { background: #4a3a6a; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #6a5a8a; }
+html.dark .glass {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+html.dark .glass-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+html.dark .bg-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+html.dark .card-shadow {
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.3);
+}
+html.dark .card-shadow:hover {
+  box-shadow: 0 12px 40px -8px rgba(120, 80, 200, 0.25), 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+}
+html.dark .markdown-body { color: #d1d5db; }
+html.dark .markdown-body h1, html.dark .markdown-body h2, html.dark .markdown-body h3,
+html.dark .markdown-body h4, html.dark .markdown-body h5, html.dark .markdown-body h6 {
+  color: #f9fafb;
+}
+html.dark .markdown-body a { color: #a78bfa; }
+html.dark .markdown-body code { background: rgba(255, 255, 255, 0.1); }
+html.dark .markdown-body pre { background: rgba(255, 255, 255, 0.05); }
+html.dark .markdown-body th, html.dark .markdown-body td { border-color: #374151; }
+html.dark .markdown-body th { background: rgba(255, 255, 255, 0.05); }
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #e8ecf1; }
+::-webkit-scrollbar-thumb { background: #c0c8d4; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #a0aab8; }
+
+/* 全局过渡 */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 渐变文字 */
+.text-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 40%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 毛玻璃 */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 网格背景 */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* 卡片阴影 */
+.card-shadow {
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08);
+}
+.card-shadow:hover {
+  box-shadow: 0 12px 40px -8px rgba(120, 80, 200, 0.15), 0 4px 12px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Markdown 样式 */
+.markdown-body {
+  color: #374151;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3,
+.markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  color: #1f2937;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-body h1 { font-size: 1.5em; }
+.markdown-body h2 { font-size: 1.3em; }
+.markdown-body p { margin-bottom: 1em; line-height: 1.7; }
+.markdown-body a { color: #7c3aed; text-decoration: none; }
+.markdown-body a:hover { text-decoration: underline; }
+.markdown-body code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.markdown-body pre {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+}
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.markdown-body li { margin-bottom: 0.25em; }
+.markdown-body blockquote {
+  border-left: 4px solid #7c3aed;
+  padding-left: 1em;
+  color: #6b7280;
+  margin: 1em 0;
+}
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1em 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+.markdown-body th, .markdown-body td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+.markdown-body th {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
 }
 
 body {

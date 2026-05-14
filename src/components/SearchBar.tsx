@@ -14,10 +14,12 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const blurTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     return () => {
       if (blurTimerRef.current) clearTimeout(blurTimerRef.current);
+      if (debounceRef.current) clearTimeout(debounceRef.current);
     };
   }, []);
 
@@ -104,8 +106,9 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
-              onSearch(e.target.value);
               setShowSuggestions(true);
+              if (debounceRef.current) clearTimeout(debounceRef.current);
+              debounceRef.current = setTimeout(() => onSearch(e.target.value), 300);
             }}
             onFocus={() => {
               setFocused(true);
@@ -124,6 +127,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
               type="button"
               onClick={() => {
                 setValue('');
+                if (debounceRef.current) clearTimeout(debounceRef.current);
                 onSearch('');
                 inputRef.current?.focus();
               }}

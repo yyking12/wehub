@@ -48,7 +48,7 @@ export default function HotPage() {
           搜索 "{searchQuery}" 找到 {hotApps.length} 个应用
         </p>
       )}
-      <AppGrid apps={hotApps} />
+      <AppGrid apps={hotApps} loading={loading} />
     </main>
   );
 }

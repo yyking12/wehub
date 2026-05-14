@@ -2,6 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CategoryDropdown from './CategoryDropdown';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { to: '/discover', label: '发现' },
@@ -96,16 +97,19 @@ export default function Navbar() {
         </div>
 
         {/* Right side */}
-        <motion.a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="glass px-4 py-2 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-300"
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          GitHub
-        </motion.a>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <motion.a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass px-4 py-2 rounded-xl text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-300"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            GitHub
+          </motion.a>
+        </div>
       </div>
     </motion.nav>
   );

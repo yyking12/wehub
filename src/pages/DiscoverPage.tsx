@@ -37,7 +37,7 @@ export default function DiscoverPage() {
           搜索 "{searchQuery}" 找到 {featuredApps.length} 个应用
         </p>
       )}
-      <AppGrid apps={featuredApps} />
+      <AppGrid apps={featuredApps} loading={loading} />
     </main>
   );
 }

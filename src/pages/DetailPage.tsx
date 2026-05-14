@@ -1,6 +1,8 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useMemo } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import appsData from '../data/apps.json';
 import { fetchReadme } from '../services/github';
 import { useGitHubAppsContext } from '../context/GitHubAppsContext';
@@ -178,19 +180,13 @@ export default function DetailPage() {
             ) : readmeError ? (
               <p className="text-gray-500">{readmeError}</p>
             ) : (
-              <div
-                className="text-gray-600 overflow-x-auto whitespace-pre-wrap rounded-lg bg-gray-100/50 p-6"
-                style={{ fontFamily: 'monospace', fontSize: '0.875rem', lineHeight: '1.6', maxHeight: '500px', overflowY: 'auto' }}
-              >
-                {readme.slice(0, 3000)}
-                {readme.length > 3000 && (
-                  <p className="text-gray-400 mt-4 pt-4 border-t border-gray-200">
-                    （README 内容较长，仅展示前 3000 字符。
-                    <a href={displayRepoUrl} target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline ml-1">
-                      在 GitHub 查看完整内容 →
-                    </a>）
-                  </p>
-                )}
+              <div className="markdown-body overflow-x-auto rounded-lg bg-gray-100/50 p-6 max-h-[500px] overflow-y-auto">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{readme}</ReactMarkdown>
+                <p className="text-gray-400 mt-4 pt-4 border-t border-gray-200 text-sm">
+                  <a href={displayRepoUrl} target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">
+                    在 GitHub 查看完整内容 →
+                  </a>
+                </p>
               </div>
             )}
           </motion.div>
