@@ -2,7 +2,7 @@
 
 const GITHUB_API = 'https://api.github.com';
 const SEARCH_QUERY = 'topic:android+language:kotlin';
-export const CACHE_KEY = 'wehub_github_data_v2';
+export const CACHE_KEY = 'wehub_github_data_v3';
 const CACHE_DURATION = 30 * 60 * 1000;
 
 interface GitHubRepo {
@@ -32,6 +32,13 @@ function calcActivityScore(updatedAt: string): number {
 }
 
 function transformRepo(repo: GitHubRepo, index: number): AppInfo {
+  const rawTags = Array.isArray(repo.topics) ? repo.topics : [];
+  const cleanTags = rawTags
+    .filter(t => typeof t === 'string' && t.length > 0 && t !== 'android')
+    .map(t => t.toLowerCase().trim())
+    .filter((t, i, arr) => arr.indexOf(t) === i)
+    .slice(0, 5);
+
   return {
     id: `gh-${repo.id}`,
     name: repo.name || '未命名',
@@ -39,8 +46,8 @@ function transformRepo(repo: GitHubRepo, index: number): AppInfo {
     longDescription: repo.description || '暂无详细介绍',
     stars: repo.stargazers_count || 0,
     activityScore: calcActivityScore(repo.updated_at || new Date().toISOString()),
-    category: repo.topics?.find(t => t !== 'android') || '其他',
-    tags: Array.isArray(repo.topics) ? repo.topics.filter(t => t !== 'android').slice(0, 3) : [],
+    category: cleanTags.find(t => t !== 'android') || '其他',
+    tags: cleanTags,
     author: repo.owner?.login || 'unknown',
     repoUrl: repo.html_url || '',
     downloadUrl: `${repo.html_url}/releases/latest`,

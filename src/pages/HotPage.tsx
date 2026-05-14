@@ -1,4 +1,5 @@
 ﻿import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppGrid from '../components/AppGrid';
 import SearchBar from '../components/SearchBar';
 import FilterBar from '../components/FilterBar';
@@ -11,6 +12,7 @@ function calcHotScore(app: AppInfo): number {
 }
 
 export default function HotPage() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredApps, setFilteredApps] = useState<AppInfo[] | null>(null);
   const { allApps, loading, error } = useGitHubAppsContext();
@@ -27,12 +29,16 @@ export default function HotPage() {
       app.name.toLowerCase().includes(q) ||
       app.description.toLowerCase().includes(q) ||
       app.author.toLowerCase().includes(q) ||
-      app.tags.some(tag => tag.toLowerCase().includes(q)) ||
+      (app.tags || []).some(tag => tag.toLowerCase().includes(q)) ||
       app.category.toLowerCase().includes(q)
     );
   }, [allApps, searchQuery]);
 
   const displayApps = filteredApps ?? baseApps;
+
+  const handleTagClick = (tag: string) => {
+    navigate(`/discover?tag=${encodeURIComponent(tag)}`);
+  };
 
   return (
     <main className="pt-24 pb-20">
@@ -55,7 +61,7 @@ export default function HotPage() {
       {!loading && allApps.length > 0 && (
         <FilterBar apps={baseApps} onFilter={setFilteredApps} />
       )}
-      <AppGrid apps={displayApps} loading={loading} />
+      <AppGrid apps={displayApps} loading={loading} onTagClick={handleTagClick} />
     </main>
   );
 }

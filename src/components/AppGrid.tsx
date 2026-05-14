@@ -6,9 +6,10 @@ import type { AppInfo } from '../types';
 interface AppGridProps {
   apps: AppInfo[];
   loading?: boolean;
+  onTagClick?: (tag: string) => void;
 }
 
-export default function AppGrid({ apps, loading = false }: AppGridProps) {
+export default function AppGrid({ apps, loading = false, onTagClick }: AppGridProps) {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-6 pb-20">
@@ -37,7 +38,7 @@ export default function AppGrid({ apps, loading = false }: AppGridProps) {
     <div className="max-w-7xl mx-auto px-6 pb-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {apps.map((app, index) => (
-          <AppCard key={app.id} app={app} index={index} />
+          <AppCard key={app.id} app={app} index={index} onTagClick={onTagClick} />
         ))}
       </div>
     </div>

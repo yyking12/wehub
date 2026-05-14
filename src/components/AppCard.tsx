@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import type { AppInfo } from '../types';
@@ -18,7 +18,14 @@ const languageColors: Record<string, string> = {
   Unknown: 'bg-gray-400',
 };
 
-function formatDate(dateStr: string): string {
+function formatFullDate(dateStr: string): string {
+  if (!dateStr) return '未知';
+  const d = new Date(dateStr);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function formatRelative(dateStr: string): string {
+  if (!dateStr) return '';
   const date = new Date(dateStr);
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
@@ -31,20 +38,30 @@ function formatDate(dateStr: string): string {
   return `${Math.floor(diffDays / 365)} 年前`;
 }
 
+function getSafeTags(app: AppInfo): string[] {
+  if (!Array.isArray(app.tags)) return [];
+  return app.tags
+    .filter((t): t is string => typeof t === 'string' && t.length > 0)
+    .slice(0, 3);
+}
+
 interface AppCardProps {
   app: AppInfo;
   index: number;
+  onTagClick?: (tag: string) => void;
 }
 
-export default function AppCard({ app, index }: AppCardProps) {
+export default function AppCard({ app, index, onTagClick }: AppCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
   const desc = app.description || '暂无描述';
-  const isLong = desc.length > 80;
-  const displayDesc = isLong && !expanded ? desc.slice(0, 80) + '...' : desc;
+  const isLong = desc.length > 100;
+  const displayDesc = isLong && !expanded ? desc.slice(0, 100) + '...' : desc;
   const lang = app.language || 'Unknown';
   const langColor = languageColors[lang] || 'bg-gray-400';
-  const updatedStr = app.updatedAt ? formatDate(app.updatedAt) : '';
-  const tags = Array.isArray(app.tags) ? app.tags.filter(Boolean).slice(0, 3) : [];
+  const tags = getSafeTags(app);
+  const updatedFull = formatFullDate(app.updatedAt || app.createdAt);
+  const updatedRelative = formatRelative(app.updatedAt || app.createdAt);
 
   return (
     <motion.div
@@ -63,8 +80,8 @@ export default function AppCard({ app, index }: AppCardProps) {
           whileHover={{ y: -6 }}
           style={{ transformStyle: 'preserve-3d' }}
         >
-          {/* Header: Icon + Name + Stars */}
-          <div className="flex items-start gap-4 mb-3">
+          {/* Header: Icon + Name/Author + Stars */}
+          <div className="flex items-start gap-3.5 mb-3">
             <motion.div
               className="w-12 h-12 rounded-2xl bg-gray-100 overflow-hidden flex-shrink-0 ring-1 ring-gray-200"
               whileHover={{ scale: 1.05 }}
@@ -83,50 +100,59 @@ export default function AppCard({ app, index }: AppCardProps) {
               />
             </motion.div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-gray-900 font-semibold text-base truncate">{app.name}</h3>
+              <h3 className="text-gray-900 font-bold text-[17px] truncate leading-tight">{app.name}</h3>
               <p className="text-gray-400 text-xs mt-0.5">@{app.author}</p>
             </div>
-            <div className="flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-gray-500 flex-shrink-0">
-              <span className="text-yellow-500">⭐</span>
+            <div className="flex items-center gap-1 bg-yellow-50 rounded-full px-2.5 py-1 text-xs font-semibold text-yellow-700 flex-shrink-0 ring-1 ring-yellow-200">
+              <span>⭐</span>
               {app.stars >= 1000 ? `${(app.stars / 1000).toFixed(1)}k` : app.stars}
             </div>
           </div>
 
           {/* Description */}
           <p
-            className={`text-gray-500 text-sm leading-relaxed mb-3 ${isLong ? 'cursor-pointer' : ''}`}
-            onClick={(e) => { e.preventDefault(); setExpanded(!expanded); }}
+            className="text-gray-500 text-sm leading-relaxed mb-3"
+            onClick={(e) => { if (isLong) { e.preventDefault(); setExpanded(!expanded); } }}
           >
             {displayDesc}
             {isLong && (
-              <span className="text-purple-500 ml-1 text-xs font-medium">
+              <span className="text-purple-500 ml-1 text-xs font-medium inline-block">
                 {expanded ? '收起' : '展开'}
               </span>
             )}
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {tags.map((tag, i) => (
-              <span key={`${tag}-${i}`} className="text-xs font-medium glass px-2.5 py-0.5 rounded-full text-gray-500">
-                {tag}
-              </span>
-            ))}
-          </div>
+          {tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {tags.map((tag, i) => (
+                <span
+                  key={`${tag}-${i}`}
+                  className="inline-block text-xs font-medium bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full cursor-pointer hover:bg-purple-100 hover:text-purple-700 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (onTagClick) onTagClick(tag);
+                    else navigate(`/discover?tag=${encodeURIComponent(tag)}`);
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           {/* Metadata bar */}
           <div className="flex items-center gap-3 pt-3 border-t border-gray-200/50 text-xs text-gray-400">
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5" title={`编程语言: ${lang}`}>
               <span className={`w-2.5 h-2.5 rounded-full ${langColor}`} />
               {lang}
             </span>
-            {updatedStr && (
-              <span className="flex items-center gap-1">
-                🕒 {updatedStr}
-              </span>
-            )}
+            <span className="flex items-center gap-1" title={`最后更新: ${updatedFull}`}>
+              🕒 {updatedRelative}
+            </span>
             {app.license && app.license !== 'Unknown' && (
-              <span className="glass px-2 py-0.5 rounded text-[10px]">
+              <span className="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-medium" title={`开源协议: ${app.license}`}>
                 {app.license}
               </span>
             )}
