@@ -1,0 +1,623 @@
+[
+  {
+    "id": "gh-186733095",
+    "name": "v2rayNG",
+    "description": "A V2Ray client for Android, support Xray core and v2fly core",
+    "longDescription": "A V2Ray client for Android, support Xray core and v2fly core",
+    "stars": 55968,
+    "activityScore": 99,
+    "category": "proxy",
+    "tags": [
+      "proxy",
+      "shadowsocks",
+      "socks5"
+    ],
+    "author": "2dust",
+    "repoUrl": "https://github.com/2dust/v2rayNG",
+    "downloadUrl": "https://github.com/2dust/v2rayNG/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/31833384?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2019-05-15T02:15:31Z"
+  },
+  {
+    "id": "gh-5152285",
+    "name": "okhttp",
+    "description": "Square’s meticulous HTTP client for the JVM, Android, and GraalVM.",
+    "longDescription": "Square’s meticulous HTTP client for the JVM, Android, and GraalVM.",
+    "stars": 46966,
+    "activityScore": 98,
+    "category": "graalvm",
+    "tags": [
+      "graalvm",
+      "java",
+      "kotlin"
+    ],
+    "author": "square",
+    "repoUrl": "https://github.com/square/okhttp",
+    "downloadUrl": "https://github.com/square/okhttp/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/82592?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2012-07-23T13:42:55Z"
+  },
+  {
+    "id": "gh-51148780",
+    "name": "architecture-samples",
+    "description": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
+    "longDescription": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
+    "stars": 45679,
+    "activityScore": 99,
+    "category": "android-architecture",
+    "tags": [
+      "android-architecture",
+      "samples"
+    ],
+    "author": "android",
+    "repoUrl": "https://github.com/android/architecture-samples",
+    "downloadUrl": "https://github.com/android/architecture-samples/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/32689599?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2016-02-05T13:42:07Z"
+  },
+  {
+    "id": "gh-661957079",
+    "name": "gkd",
+    "description": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
+    "longDescription": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
+    "stars": 38440,
+    "activityScore": 99,
+    "category": "accessibility",
+    "tags": [
+      "accessibility",
+      "auto",
+      "click"
+    ],
+    "author": "gkd-kit",
+    "repoUrl": "https://github.com/gkd-kit/gkd",
+    "downloadUrl": "https://github.com/gkd-kit/gkd/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/138121201?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2023-07-04T03:59:15Z"
+  },
+  {
+    "id": "gh-7190986",
+    "name": "shadowsocks-android",
+    "description": "A shadowsocks client for Android",
+    "longDescription": "A shadowsocks client for Android",
+    "stars": 36640,
+    "activityScore": 99,
+    "category": "shadowsocks",
+    "tags": [
+      "shadowsocks"
+    ],
+    "author": "shadowsocks",
+    "repoUrl": "https://github.com/shadowsocks/shadowsocks-android",
+    "downloadUrl": "https://github.com/shadowsocks/shadowsocks-android/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/3006190?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2012-12-16T13:40:29Z"
+  },
+  {
+    "id": "gh-34824499",
+    "name": "leakcanary",
+    "description": "A memory leak detection library for Android.",
+    "longDescription": "A memory leak detection library for Android.",
+    "stars": 29923,
+    "activityScore": 96,
+    "category": "java",
+    "tags": [
+      "java",
+      "kotlin",
+      "kotlin-android"
+    ],
+    "author": "square",
+    "repoUrl": "https://github.com/square/leakcanary",
+    "downloadUrl": "https://github.com/square/leakcanary/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/82592?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2015-04-29T23:54:16Z"
+  },
+  {
+    "id": "gh-471494981",
+    "name": "revanced-manager",
+    "description": "💊 Application to use ReVanced on Android ",
+    "longDescription": "💊 Application to use ReVanced on Android ",
+    "stars": 27823,
+    "activityScore": 99,
+    "category": "jetpack-compose",
+    "tags": [
+      "jetpack-compose",
+      "manager",
+      "modding"
+    ],
+    "author": "ReVanced",
+    "repoUrl": "https://github.com/ReVanced/revanced-manager",
+    "downloadUrl": "https://github.com/ReVanced/revanced-manager/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/101597779?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2022-03-18T19:38:55Z"
+  },
+  {
+    "id": "gh-863717537",
+    "name": "librepods",
+    "description": "AirPods liberated from Apple's ecosystem.",
+    "longDescription": "AirPods liberated from Apple's ecosystem.",
+    "stars": 26949,
+    "activityScore": 99,
+    "category": "accessibility",
+    "tags": [
+      "accessibility",
+      "airpods",
+      "battery-monitor"
+    ],
+    "author": "kavishdevar",
+    "repoUrl": "https://github.com/kavishdevar/librepods",
+    "downloadUrl": "https://github.com/kavishdevar/librepods/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/46088622?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2024-09-26T19:31:11Z"
+  },
+  {
+    "id": "gh-481797111",
+    "name": "Seal",
+    "description": "🦭 Video/Audio Downloader for Android, based on yt-dlp",
+    "longDescription": "🦭 Video/Audio Downloader for Android, based on yt-dlp",
+    "stars": 26192,
+    "activityScore": 99,
+    "category": "f-droid",
+    "tags": [
+      "f-droid",
+      "jetpack-compose",
+      "kotlin"
+    ],
+    "author": "JunkFood02",
+    "repoUrl": "https://github.com/JunkFood02/Seal",
+    "downloadUrl": "https://github.com/JunkFood02/Seal/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/69683722?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2022-04-15T01:15:25Z"
+  },
+  {
+    "id": "gh-337594329",
+    "name": "SmsForwarder",
+    "description": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
+    "longDescription": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
+    "stars": 25603,
+    "activityScore": 99,
+    "category": "api",
+    "tags": [
+      "api",
+      "app",
+      "bark"
+    ],
+    "author": "pppscn",
+    "repoUrl": "https://github.com/pppscn/SmsForwarder",
+    "downloadUrl": "https://github.com/pppscn/SmsForwarder/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/5105854?v=4",
+    "screenshots": [],
+    "featured": true,
+    "createdAt": "2021-02-10T02:23:07Z"
+  },
+  {
+    "id": "gh-55886798",
+    "name": "BaseRecyclerViewAdapterHelper",
+    "description": "BRVAH:Powerful and flexible RecyclerAdapter",
+    "longDescription": "BRVAH:Powerful and flexible RecyclerAdapter",
+    "stars": 24614,
+    "activityScore": 98,
+    "category": "android-library",
+    "tags": [
+      "android-library",
+      "recyclerview",
+      "recyclerview-adapter"
+    ],
+    "author": "CymChad",
+    "repoUrl": "https://github.com/CymChad/BaseRecyclerViewAdapterHelper",
+    "downloadUrl": "https://github.com/CymChad/BaseRecyclerViewAdapterHelper/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/7698209?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2016-04-10T07:40:11Z"
+  },
+  {
+    "id": "gh-211288349",
+    "name": "compose-samples",
+    "description": "Official Jetpack Compose samples.",
+    "longDescription": "Official Jetpack Compose samples.",
+    "stars": 23148,
+    "activityScore": 99,
+    "category": "jetpack-compose",
+    "tags": [
+      "jetpack-compose"
+    ],
+    "author": "android",
+    "repoUrl": "https://github.com/android/compose-samples",
+    "downloadUrl": "https://github.com/android/compose-samples/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/32689599?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2019-09-27T09:51:19Z"
+  },
+  {
+    "id": "gh-18347476",
+    "name": "iosched",
+    "description": "The Google I/O Android App",
+    "longDescription": "The Google I/O Android App",
+    "stars": 21688,
+    "activityScore": 95,
+    "category": "architecture",
+    "tags": [
+      "architecture",
+      "conference",
+      "coroutines"
+    ],
+    "author": "google",
+    "repoUrl": "https://github.com/google/iosched",
+    "downloadUrl": "https://github.com/google/iosched/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1342004?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2014-04-01T22:40:40Z"
+  },
+  {
+    "id": "gh-483402734",
+    "name": "nowinandroid",
+    "description": "A fully functional Android app built entirely with Kotlin and Jetpack Compose",
+    "longDescription": "A fully functional Android app built entirely with Kotlin and Jetpack Compose",
+    "stars": 21210,
+    "activityScore": 99,
+    "category": "jetpack-compose",
+    "tags": [
+      "jetpack-compose",
+      "kotlin"
+    ],
+    "author": "android",
+    "repoUrl": "https://github.com/android/nowinandroid",
+    "downloadUrl": "https://github.com/android/nowinandroid/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/32689599?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2022-04-19T20:40:24Z"
+  },
+  {
+    "id": "gh-609535399",
+    "name": "NekoBoxForAndroid",
+    "description": "NekoBox for Android / sing-box / universal proxy toolchain for Android",
+    "longDescription": "NekoBox for Android / sing-box / universal proxy toolchain for Android",
+    "stars": 20709,
+    "activityScore": 99,
+    "category": "gfw",
+    "tags": [
+      "gfw",
+      "proxy",
+      "shadowsocks"
+    ],
+    "author": "MatsuriDayo",
+    "repoUrl": "https://github.com/MatsuriDayo/NekoBoxForAndroid",
+    "downloadUrl": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/95122236?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2023-03-04T13:26:16Z"
+  },
+  {
+    "id": "gh-743704912",
+    "name": "mihon",
+    "description": "Free and open source manga reader for Android",
+    "longDescription": "Free and open source manga reader for Android",
+    "stars": 20553,
+    "activityScore": 99,
+    "category": "kotlin",
+    "tags": [
+      "kotlin",
+      "manga",
+      "manga-downloader"
+    ],
+    "author": "mihonapp",
+    "repoUrl": "https://github.com/mihonapp/mihon",
+    "downloadUrl": "https://github.com/mihonapp/mihon/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/156513628?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2024-01-15T20:03:57Z"
+  },
+  {
+    "id": "gh-26102180",
+    "name": "material-dialogs",
+    "description": "😍 A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",
+    "longDescription": "😍 A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",
+    "stars": 19598,
+    "activityScore": 97,
+    "category": "alert",
+    "tags": [
+      "alert",
+      "androidx",
+      "bottomsheets"
+    ],
+    "author": "afollestad",
+    "repoUrl": "https://github.com/afollestad/material-dialogs",
+    "downloadUrl": "https://github.com/afollestad/material-dialogs/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1820165?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2014-11-03T03:21:42Z"
+  },
+  {
+    "id": "gh-293498508",
+    "name": "compose-multiplatform",
+    "description": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
+    "longDescription": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
+    "stars": 19047,
+    "activityScore": 99,
+    "category": "awt",
+    "tags": [
+      "awt",
+      "compose",
+      "declarative-ui"
+    ],
+    "author": "JetBrains",
+    "repoUrl": "https://github.com/JetBrains/compose-multiplatform",
+    "downloadUrl": "https://github.com/JetBrains/compose-multiplatform/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/878437?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2020-09-07T10:40:49Z"
+  },
+  {
+    "id": "gh-58034548",
+    "name": "flexbox-layout",
+    "description": "Flexbox for Android ",
+    "longDescription": "Flexbox for Android ",
+    "stars": 18338,
+    "activityScore": 98,
+    "category": "android-library",
+    "tags": [
+      "android-library",
+      "flexbox"
+    ],
+    "author": "google",
+    "repoUrl": "https://github.com/google/flexbox-layout",
+    "downloadUrl": "https://github.com/google/flexbox-layout/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1342004?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2016-05-04T08:11:22Z"
+  },
+  {
+    "id": "gh-519845229",
+    "name": "animeko",
+    "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+    "longDescription": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+    "stars": 17704,
+    "activityScore": 99,
+    "category": "ani",
+    "tags": [
+      "ani",
+      "anime",
+      "bangumi"
+    ],
+    "author": "open-ani",
+    "repoUrl": "https://github.com/open-ani/animeko",
+    "downloadUrl": "https://github.com/open-ani/animeko/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/166622089?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2022-07-31T17:38:49Z"
+  },
+  {
+    "id": "gh-576303915",
+    "name": "KernelSU",
+    "description": "A Kernel based root solution for Android",
+    "longDescription": "A Kernel based root solution for Android",
+    "stars": 16369,
+    "activityScore": 99,
+    "category": "kernel",
+    "tags": [
+      "kernel",
+      "kernelsu",
+      "root"
+    ],
+    "author": "tiann",
+    "repoUrl": "https://github.com/tiann/KernelSU",
+    "downloadUrl": "https://github.com/tiann/KernelSU/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/4233744?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2022-12-09T14:03:54Z"
+  },
+  {
+    "id": "gh-24186761",
+    "name": "anko",
+    "description": "Pleasant Android application development",
+    "longDescription": "Pleasant Android application development",
+    "stars": 15791,
+    "activityScore": 97,
+    "category": "kotlin",
+    "tags": [
+      "kotlin"
+    ],
+    "author": "Kotlin",
+    "repoUrl": "https://github.com/Kotlin/anko",
+    "downloadUrl": "https://github.com/Kotlin/anko/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1446536?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2014-09-18T12:12:23Z"
+  },
+  {
+    "id": "gh-476427476",
+    "name": "Maestro",
+    "description": "Painless E2E Automation for Mobile and Web",
+    "longDescription": "Painless E2E Automation for Mobile and Web",
+    "stars": 14028,
+    "activityScore": 99,
+    "category": "blackbox-testing",
+    "tags": [
+      "blackbox-testing",
+      "ios",
+      "ui-automation"
+    ],
+    "author": "mobile-dev-inc",
+    "repoUrl": "https://github.com/mobile-dev-inc/Maestro",
+    "downloadUrl": "https://github.com/mobile-dev-inc/Maestro/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/65870663?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2022-03-31T18:17:40Z"
+  },
+  {
+    "id": "gh-1326671",
+    "name": "thunderbird-android",
+    "description": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
+    "longDescription": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
+    "stars": 13466,
+    "activityScore": 99,
+    "category": "communication",
+    "tags": [
+      "communication",
+      "email",
+      "mozilla"
+    ],
+    "author": "thunderbird",
+    "repoUrl": "https://github.com/thunderbird/thunderbird-android",
+    "downloadUrl": "https://github.com/thunderbird/thunderbird-android/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/15187237?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2011-02-04T02:40:00Z"
+  },
+  {
+    "id": "gh-1101281251",
+    "name": "GitHub-Store",
+    "description": "🩵 A free, open-source app store for GitHub releases — browse, discover, and install apps with one click. Powered by Kotlin and Compose Multiplatform for Android & Desktop (Linux, MacOS, Windows).",
+    "longDescription": "🩵 A free, open-source app store for GitHub releases — browse, discover, and install apps with one click. Powered by Kotlin and Compose Multiplatform for Android & Desktop (Linux, MacOS, Windows).",
+    "stars": 13010,
+    "activityScore": 99,
+    "category": "desktop",
+    "tags": [
+      "desktop",
+      "github-app",
+      "github-store"
+    ],
+    "author": "OpenHub-Store",
+    "repoUrl": "https://github.com/OpenHub-Store/GitHub-Store",
+    "downloadUrl": "https://github.com/OpenHub-Store/GitHub-Store/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/253768149?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2025-11-21T13:03:23Z"
+  },
+  {
+    "id": "gh-478710402",
+    "name": "ImageToolbox",
+    "description": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
+    "longDescription": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
+    "stars": 12828,
+    "activityScore": 99,
+    "category": "ai",
+    "tags": [
+      "ai",
+      "background-removal",
+      "crop"
+    ],
+    "author": "T8RIN",
+    "repoUrl": "https://github.com/T8RIN/ImageToolbox",
+    "downloadUrl": "https://github.com/T8RIN/ImageToolbox/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/52178347?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2022-04-06T20:06:28Z"
+  },
+  {
+    "id": "gh-436609718",
+    "name": "LibreTube",
+    "description": "An alternative frontend for YouTube, for Android.",
+    "longDescription": "An alternative frontend for YouTube, for Android.",
+    "stars": 11854,
+    "activityScore": 99,
+    "category": "kotlin",
+    "tags": [
+      "kotlin",
+      "material-design-3-expressive",
+      "privacy"
+    ],
+    "author": "libre-tube",
+    "repoUrl": "https://github.com/libre-tube/LibreTube",
+    "downloadUrl": "https://github.com/libre-tube/LibreTube/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/96022078?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2021-12-09T12:31:36Z"
+  },
+  {
+    "id": "gh-201684760",
+    "name": "coil",
+    "description": "Image loading for Android and Compose Multiplatform.",
+    "longDescription": "Image loading for Android and Compose Multiplatform.",
+    "stars": 11777,
+    "activityScore": 99,
+    "category": "androidx",
+    "tags": [
+      "androidx",
+      "compose",
+      "compose-multiplatform"
+    ],
+    "author": "coil-kt",
+    "repoUrl": "https://github.com/coil-kt/coil",
+    "downloadUrl": "https://github.com/coil-kt/coil/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/52722434?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2019-08-10T21:28:21Z"
+  },
+  {
+    "id": "gh-30120110",
+    "name": "MaterialDrawer",
+    "description": "The flexible, easy to use, all in one drawer library for your Android project. Now brand new with material 2 design.",
+    "longDescription": "The flexible, easy to use, all in one drawer library for your Android project. Now brand new with material 2 design.",
+    "stars": 11649,
+    "activityScore": 89,
+    "category": "android-development",
+    "tags": [
+      "android-development",
+      "android-library",
+      "android-ui"
+    ],
+    "author": "mikepenz",
+    "repoUrl": "https://github.com/mikepenz/MaterialDrawer",
+    "downloadUrl": "https://github.com/mikepenz/MaterialDrawer/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1476232?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2015-01-31T17:37:10Z"
+  },
+  {
+    "id": "gh-28340997",
+    "name": "recyclerview-animators",
+    "description": "An Android Animation library which easily add itemanimator to RecyclerView items.",
+    "longDescription": "An Android Animation library which easily add itemanimator to RecyclerView items.",
+    "stars": 11553,
+    "activityScore": 92,
+    "category": "android-library",
+    "tags": [
+      "android-library",
+      "animation",
+      "java"
+    ],
+    "author": "wasabeef",
+    "repoUrl": "https://github.com/wasabeef/recyclerview-animators",
+    "downloadUrl": "https://github.com/wasabeef/recyclerview-animators/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/1833474?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2014-12-22T14:07:08Z"
+  }
+]
