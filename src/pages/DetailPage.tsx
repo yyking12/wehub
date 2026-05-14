@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import appsData from '../data/apps.json';
@@ -10,6 +11,58 @@ import type { AppInfo } from '../types';
 
 function safeValue<T>(val: T | undefined | null, fallback: T): T {
   return val !== undefined && val !== null ? val : fallback;
+}
+
+function RelatedApps({ current, all }: { current: AppInfo; all: AppInfo[] }) {
+  const related = useMemo(() => {
+    const tags = current.tags || [];
+    return all
+      .filter(a => a.id !== current.id)
+      .map(a => ({
+        ...a,
+        score: (a.tags || []).filter(t => tags.includes(t)).length * 2 +
+               (a.category === current.category ? 3 : 0),
+      }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+  }, [current, all]);
+
+  if (related.length === 0) return null;
+
+  return (
+    <motion.div
+      className="border-t border-gray-200/50 mt-12 pt-12"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+    >
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">📎 相关应用</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {related.map(app => (
+          <Link key={app.id} to={`/app/${app.id}`} className="block">
+            <motion.div
+              className="glass rounded-xl p-4 hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -3 }}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <img
+                  src={app.icon}
+                  alt={app.name}
+                  className="w-8 h-8 rounded-lg object-cover"
+                  loading="lazy"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-semibold text-gray-900 truncate">{app.name}</h3>
+                  <p className="text-xs text-gray-400">@{app.author}</p>
+                </div>
+                <span className="text-xs text-yellow-600">⭐ {(app.stars / 1000).toFixed(1)}k</span>
+              </div>
+            </motion.div>
+          </Link>
+        ))}
+      </div>
+    </motion.div>
+  );
 }
 
 export default function DetailPage() {
@@ -95,6 +148,10 @@ export default function DetailPage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      <Helmet>
+        <title>{displayName} - WeHub</title>
+        <meta name="description" content={displayLongDesc.slice(0, 160)} />
+      </Helmet>
       <div className="max-w-4xl mx-auto">
         <motion.button
           onClick={() => navigate(-1)}
@@ -219,6 +276,8 @@ export default function DetailPage() {
             🔗 查看源代码
           </motion.a>
         </motion.div>
+
+        <RelatedApps current={app} all={allApps} />
       </div>
     </motion.main>
   );

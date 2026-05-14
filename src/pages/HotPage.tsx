@@ -1,5 +1,6 @@
 ﻿import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import AppGrid from '../components/AppGrid';
 import SearchBar from '../components/SearchBar';
 import FilterBar from '../components/FilterBar';
@@ -42,6 +43,10 @@ export default function HotPage() {
 
   return (
     <main className="pt-24 pb-20">
+      <Helmet>
+        <title>热门排行 - WeHub</title>
+        <meta name="description" content="安卓开源应用实时热度排名，综合 Star 数与社区活跃度" />
+      </Helmet>
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">🔥 热门排行</h1>
         <p className="text-gray-500">综合 Star 数与社区活跃度的实时热度排名</p>

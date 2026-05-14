@@ -90,6 +90,7 @@ export default function AppCard({ app, index, onTagClick }: AppCardProps) {
               <img
                 src={app.icon}
                 alt={app.name}
+                loading="lazy"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

@@ -1,5 +1,6 @@
 ﻿import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import AppGrid from '../components/AppGrid';
 import SearchBar from '../components/SearchBar';
 import HeroSection from '../components/HeroSection';
@@ -51,6 +52,10 @@ export default function DiscoverPage() {
 
   return (
     <main>
+      <Helmet>
+        <title>WeHub - 安卓开源应用发现平台</title>
+        <meta name="description" content="发现 GitHub 上最优秀的安卓开源应用，纯净免费无广告" />
+      </Helmet>
       <HeroSection />
       <SearchBar onSearch={setSearchQuery} />
       {loading && (

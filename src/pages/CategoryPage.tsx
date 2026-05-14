@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import AppGrid from '../components/AppGrid';
 import { useGitHubAppsContext } from '../context/GitHubAppsContext';
 
@@ -69,6 +70,10 @@ export default function CategoryPage() {
 
   return (
     <main className="pt-24 pb-20">
+      <Helmet>
+        <title>{displayLabel} - WeHub</title>
+        <meta name="description" content={`WeHub 分类：${displayLabel}，共 ${categoryApps.length} 个应用`} />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-8">
           <Link

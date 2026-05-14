@@ -1,9 +1,11 @@
 ﻿import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { lazy, Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import ScrollProgress from './components/ScrollProgress';
 import Guardian from './components/Guardian';
+import BackToTop from './components/BackToTop';
 import PageTransition from './components/PageTransition';
 import { useGitHubApps } from './hooks/useGitHubApps';
 import { GitHubAppsProvider } from './context/GitHubAppsContext';
@@ -41,19 +43,22 @@ export default function App() {
   const { allApps, loading, error } = useGitHubApps();
 
   return (
-    <BrowserRouter>
-      <ThemeProvider>
-        <GitHubAppsProvider allApps={allApps} loading={loading} error={error}>
-          <div className="min-h-screen">
-            <ScrollProgress />
-            <Navbar />
-            <Suspense fallback={<LoadingFallback />}>
-              <AppRoutes />
-            </Suspense>
-            <Guardian />
-          </div>
-        </GitHubAppsProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ThemeProvider>
+          <GitHubAppsProvider allApps={allApps} loading={loading} error={error}>
+            <div className="min-h-screen">
+              <ScrollProgress />
+              <Navbar />
+              <Suspense fallback={<LoadingFallback />}>
+                <AppRoutes />
+              </Suspense>
+              <BackToTop />
+              <Guardian />
+            </div>
+          </GitHubAppsProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
