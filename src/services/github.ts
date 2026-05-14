@@ -15,6 +15,8 @@ interface GitHubRepo {
   topics: string[];
   updated_at: string;
   created_at: string;
+  language: string | null;
+  license: { spdx_id: string | null } | null;
 }
 
 function calcActivityScore(updatedAt: string): number {
@@ -38,7 +40,7 @@ function transformRepo(repo: GitHubRepo, index: number): AppInfo {
     stars: repo.stargazers_count || 0,
     activityScore: calcActivityScore(repo.updated_at || new Date().toISOString()),
     category: repo.topics?.find(t => t !== 'android') || '其他',
-    tags: repo.topics?.filter(t => t !== 'android').slice(0, 3) || [],
+    tags: Array.isArray(repo.topics) ? repo.topics.filter(t => t !== 'android').slice(0, 3) : [],
     author: repo.owner?.login || 'unknown',
     repoUrl: repo.html_url || '',
     downloadUrl: `${repo.html_url}/releases/latest`,
@@ -46,6 +48,9 @@ function transformRepo(repo: GitHubRepo, index: number): AppInfo {
     screenshots: [],
     featured: index < 10,
     createdAt: repo.created_at || new Date().toISOString(),
+    updatedAt: repo.updated_at || new Date().toISOString(),
+    language: repo.language || 'Unknown',
+    license: repo.license?.spdx_id || 'Unknown',
   };
 }
 

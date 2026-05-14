@@ -1,6 +1,7 @@
 ﻿import { useMemo, useState } from 'react';
 import AppGrid from '../components/AppGrid';
 import SearchBar from '../components/SearchBar';
+import FilterBar from '../components/FilterBar';
 import { useGitHubAppsContext } from '../context/GitHubAppsContext';
 import type { AppInfo } from '../types';
 
@@ -11,9 +12,10 @@ function calcHotScore(app: AppInfo): number {
 
 export default function HotPage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredApps, setFilteredApps] = useState<AppInfo[] | null>(null);
   const { allApps, loading, error } = useGitHubAppsContext();
 
-  const hotApps = useMemo(() => {
+  const baseApps = useMemo(() => {
     const scored = allApps.map(app => ({
       ...app,
       hotScore: calcHotScore(app),
@@ -30,6 +32,8 @@ export default function HotPage() {
     );
   }, [allApps, searchQuery]);
 
+  const displayApps = filteredApps ?? baseApps;
+
   return (
     <main className="pt-24 pb-20">
       <div className="text-center mb-8">
@@ -45,10 +49,13 @@ export default function HotPage() {
       )}
       {searchQuery && (
         <p className="text-center text-gray-500 text-sm mb-8 -mt-4">
-          搜索 "{searchQuery}" 找到 {hotApps.length} 个应用
+          搜索 "{searchQuery}" 找到 {baseApps.length} 个应用
         </p>
       )}
-      <AppGrid apps={hotApps} loading={loading} />
+      {!loading && allApps.length > 0 && (
+        <FilterBar apps={baseApps} onFilter={setFilteredApps} />
+      )}
+      <AppGrid apps={displayApps} loading={loading} />
     </main>
   );
 }

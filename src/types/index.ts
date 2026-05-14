@@ -14,5 +14,8 @@
   screenshots: string[];
   featured: boolean;
   createdAt: string;
+  updatedAt: string;
+  language: string;
+  license: string;
 }
 

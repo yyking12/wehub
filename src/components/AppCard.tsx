@@ -1,6 +1,35 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import type { AppInfo } from '../types';
+
+const languageColors: Record<string, string> = {
+  Kotlin: 'bg-purple-500',
+  Java: 'bg-red-500',
+  'C++': 'bg-blue-500',
+  C: 'bg-gray-500',
+  Python: 'bg-yellow-500',
+  JavaScript: 'bg-yellow-400',
+  TypeScript: 'bg-blue-600',
+  Swift: 'bg-orange-500',
+  Dart: 'bg-cyan-500',
+  Go: 'bg-cyan-400',
+  Rust: 'bg-orange-600',
+  Unknown: 'bg-gray-400',
+};
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (diffDays === 0) return '今天';
+  if (diffDays === 1) return '昨天';
+  if (diffDays < 7) return `${diffDays} 天前`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} 周前`;
+  if (diffDays < 365) return `${Math.floor(diffDays / 30)} 个月前`;
+  return `${Math.floor(diffDays / 365)} 年前`;
+}
 
 interface AppCardProps {
   app: AppInfo;
@@ -8,6 +37,15 @@ interface AppCardProps {
 }
 
 export default function AppCard({ app, index }: AppCardProps) {
+  const [expanded, setExpanded] = useState(false);
+  const desc = app.description || '暂无描述';
+  const isLong = desc.length > 80;
+  const displayDesc = isLong && !expanded ? desc.slice(0, 80) + '...' : desc;
+  const lang = app.language || 'Unknown';
+  const langColor = languageColors[lang] || 'bg-gray-400';
+  const updatedStr = app.updatedAt ? formatDate(app.updatedAt) : '';
+  const tags = Array.isArray(app.tags) ? app.tags.filter(Boolean).slice(0, 3) : [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -25,9 +63,10 @@ export default function AppCard({ app, index }: AppCardProps) {
           whileHover={{ y: -6 }}
           style={{ transformStyle: 'preserve-3d' }}
         >
-          <div className="flex items-start gap-4 mb-4">
+          {/* Header: Icon + Name + Stars */}
+          <div className="flex items-start gap-4 mb-3">
             <motion.div
-              className="w-12 h-12 rounded-2xl bg-zinc-800/60 overflow-hidden flex-shrink-0 ring-1 ring-white/5"
+              className="w-12 h-12 rounded-2xl bg-gray-100 overflow-hidden flex-shrink-0 ring-1 ring-gray-200"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
@@ -38,7 +77,7 @@ export default function AppCard({ app, index }: AppCardProps) {
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   const char = app.name[0] || '?';
-                  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23222" width="100" height="100"/><text x="50" y="70" text-anchor="middle" fill="%23555" font-size="50" font-family="sans-serif">${char}</text></svg>`;
+                  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23f3f4f6" width="100" height="100"/><text x="50" y="70" text-anchor="middle" fill="%239ca3af" font-size="50" font-family="sans-serif">${char}</text></svg>`;
                   target.src = `data:image/svg+xml,${encodeURIComponent(svg)}`;
                 }}
               />
@@ -47,25 +86,50 @@ export default function AppCard({ app, index }: AppCardProps) {
               <h3 className="text-gray-900 font-semibold text-base truncate">{app.name}</h3>
               <p className="text-gray-400 text-xs mt-0.5">@{app.author}</p>
             </div>
-            <div className="flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-gray-500">
-              <span className="text-yellow-400">⭐</span>
+            <div className="flex items-center gap-1 glass rounded-full px-3 py-1 text-xs text-gray-500 flex-shrink-0">
+              <span className="text-yellow-500">⭐</span>
               {app.stars >= 1000 ? `${(app.stars / 1000).toFixed(1)}k` : app.stars}
             </div>
           </div>
-          
-          <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-4">
-            {app.description}
+
+          {/* Description */}
+          <p
+            className={`text-gray-500 text-sm leading-relaxed mb-3 ${isLong ? 'cursor-pointer' : ''}`}
+            onClick={(e) => { e.preventDefault(); setExpanded(!expanded); }}
+          >
+            {displayDesc}
+            {isLong && (
+              <span className="text-purple-500 ml-1 text-xs font-medium">
+                {expanded ? '收起' : '展开'}
+              </span>
+            )}
           </p>
-          
-          <div className="flex flex-wrap gap-2">
-            <span className="text-xs font-medium glass px-3 py-1 rounded-full text-purple-300 border-purple-400/20">
-              {app.category}
-            </span>
-            {app.tags.slice(0, 2).map((tag) => (
-              <span key={tag} className="text-xs font-medium glass px-3 py-1 rounded-full text-gray-500">
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {tags.map((tag, i) => (
+              <span key={`${tag}-${i}`} className="text-xs font-medium glass px-2.5 py-0.5 rounded-full text-gray-500">
                 {tag}
               </span>
             ))}
+          </div>
+
+          {/* Metadata bar */}
+          <div className="flex items-center gap-3 pt-3 border-t border-gray-200/50 text-xs text-gray-400">
+            <span className="flex items-center gap-1.5">
+              <span className={`w-2.5 h-2.5 rounded-full ${langColor}`} />
+              {lang}
+            </span>
+            {updatedStr && (
+              <span className="flex items-center gap-1">
+                🕒 {updatedStr}
+              </span>
+            )}
+            {app.license && app.license !== 'Unknown' && (
+              <span className="glass px-2 py-0.5 rounded text-[10px]">
+                {app.license}
+              </span>
+            )}
           </div>
         </motion.div>
       </Link>
