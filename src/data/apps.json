@@ -4,7 +4,7 @@
     "name": "v2rayNG",
     "description": "A V2Ray client for Android, support Xray core and v2fly core",
     "longDescription": "A V2Ray client for Android, support Xray core and v2fly core",
-    "stars": 60461,
+    "stars": 60511,
     "activityScore": 99,
     "category": "proxy",
     "tags": [
@@ -25,8 +25,8 @@
     "name": "okhttp",
     "description": "A meticulous HTTP client for the JVM, Android, and GraalVM.",
     "longDescription": "A meticulous HTTP client for the JVM, Android, and GraalVM.",
-    "stars": 47021,
-    "activityScore": 98,
+    "stars": 47022,
+    "activityScore": 99,
     "category": "graalvm",
     "tags": [
       "graalvm",
@@ -46,7 +46,7 @@
     "name": "architecture-samples",
     "description": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
     "longDescription": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
-    "stars": 45774,
+    "stars": 45776,
     "activityScore": 99,
     "category": "android-architecture",
     "tags": [
@@ -67,7 +67,7 @@
     "name": "gkd",
     "description": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
     "longDescription": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
-    "stars": 40597,
+    "stars": 40622,
     "activityScore": 99,
     "category": "accessibility",
     "tags": [
@@ -88,8 +88,8 @@
     "name": "shadowsocks-android",
     "description": "A shadowsocks client for Android",
     "longDescription": "A shadowsocks client for Android",
-    "stars": 36749,
-    "activityScore": 98,
+    "stars": 36750,
+    "activityScore": 99,
     "category": "shadowsocks",
     "tags": [
       "shadowsocks"
@@ -107,7 +107,7 @@
     "name": "leakcanary",
     "description": "A memory leak detection library for Android.",
     "longDescription": "A memory leak detection library for Android.",
-    "stars": 29961,
+    "stars": 29963,
     "activityScore": 99,
     "category": "java",
     "tags": [
@@ -128,7 +128,7 @@
     "name": "librepods",
     "description": "AirPods liberated from Apple's ecosystem.",
     "longDescription": "AirPods liberated from Apple's ecosystem.",
-    "stars": 29244,
+    "stars": 29253,
     "activityScore": 99,
     "category": "accessiblity",
     "tags": [
@@ -149,7 +149,7 @@
     "name": "revanced-manager",
     "description": "💊 Application to use ReVanced on Android ",
     "longDescription": "💊 Application to use ReVanced on Android ",
-    "stars": 28823,
+    "stars": 28841,
     "activityScore": 99,
     "category": "jetpack-compose",
     "tags": [
@@ -170,7 +170,7 @@
     "name": "Seal",
     "description": "🦭 Video/Audio Downloader for Android, based on yt-dlp",
     "longDescription": "🦭 Video/Audio Downloader for Android, based on yt-dlp",
-    "stars": 27923,
+    "stars": 27935,
     "activityScore": 99,
     "category": "f-droid",
     "tags": [
@@ -191,7 +191,7 @@
     "name": "SmsForwarder",
     "description": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
     "longDescription": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
-    "stars": 27337,
+    "stars": 27346,
     "activityScore": 99,
     "category": "api",
     "tags": [
@@ -212,8 +212,8 @@
     "name": "BaseRecyclerViewAdapterHelper",
     "description": "BRVAH:Powerful and flexible RecyclerAdapter",
     "longDescription": "BRVAH:Powerful and flexible RecyclerAdapter",
-    "stars": 24590,
-    "activityScore": 95,
+    "stars": 24589,
+    "activityScore": 98,
     "category": "android-library",
     "tags": [
       "android-library",
@@ -233,7 +233,7 @@
     "name": "compose-samples",
     "description": "Official Jetpack Compose samples.",
     "longDescription": "Official Jetpack Compose samples.",
-    "stars": 23346,
+    "stars": 23347,
     "activityScore": 99,
     "category": "jetpack-compose",
     "tags": [
@@ -253,7 +253,7 @@
     "name": "mihon",
     "description": "Free and open source manga reader for Android",
     "longDescription": "Free and open source manga reader for Android",
-    "stars": 22438,
+    "stars": 22476,
     "activityScore": 99,
     "category": "kotlin",
     "tags": [
@@ -274,7 +274,7 @@
     "name": "NekoBoxForAndroid",
     "description": "NekoBox for Android / sing-box / universal proxy toolchain for Android",
     "longDescription": "NekoBox for Android / sing-box / universal proxy toolchain for Android",
-    "stars": 22101,
+    "stars": 22126,
     "activityScore": 99,
     "category": "gfw",
     "tags": [
@@ -296,7 +296,7 @@
     "description": "The Google I/O Android App",
     "longDescription": "The Google I/O Android App",
     "stars": 21648,
-    "activityScore": 98,
+    "activityScore": 97,
     "category": "architecture",
     "tags": [
       "architecture",
@@ -316,7 +316,7 @@
     "name": "nowinandroid",
     "description": "A fully functional Android app built entirely with Kotlin and Jetpack Compose",
     "longDescription": "A fully functional Android app built entirely with Kotlin and Jetpack Compose",
-    "stars": 21610,
+    "stars": 21616,
     "activityScore": 99,
     "category": "jetpack-compose",
     "tags": [
@@ -337,8 +337,8 @@
     "name": "material-dialogs",
     "description": "😍 A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",
     "longDescription": "😍 A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",
-    "stars": 19564,
-    "activityScore": 99,
+    "stars": 19563,
+    "activityScore": 98,
     "category": "alert",
     "tags": [
       "alert",
@@ -354,32 +354,11 @@
     "createdAt": "2014-11-03T03:21:42Z"
   },
   {
-    "id": "gh-293498508",
-    "name": "compose-multiplatform",
-    "description": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
-    "longDescription": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
-    "stars": 19262,
-    "activityScore": 99,
-    "category": "awt",
-    "tags": [
-      "awt",
-      "compose",
-      "declarative-ui"
-    ],
-    "author": "JetBrains",
-    "repoUrl": "https://github.com/JetBrains/compose-multiplatform",
-    "downloadUrl": "https://github.com/JetBrains/compose-multiplatform/releases/latest",
-    "icon": "https://avatars.githubusercontent.com/u/878437?v=4",
-    "screenshots": [],
-    "featured": false,
-    "createdAt": "2020-09-07T10:40:49Z"
-  },
-  {
     "id": "gh-519845229",
     "name": "animeko",
     "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
     "longDescription": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
-    "stars": 19239,
+    "stars": 19277,
     "activityScore": 99,
     "category": "ani",
     "tags": [
@@ -396,12 +375,33 @@
     "createdAt": "2022-07-31T17:38:49Z"
   },
   {
+    "id": "gh-293498508",
+    "name": "compose-multiplatform",
+    "description": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
+    "longDescription": "Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable.",
+    "stars": 19266,
+    "activityScore": 99,
+    "category": "awt",
+    "tags": [
+      "awt",
+      "compose",
+      "declarative-ui"
+    ],
+    "author": "JetBrains",
+    "repoUrl": "https://github.com/JetBrains/compose-multiplatform",
+    "downloadUrl": "https://github.com/JetBrains/compose-multiplatform/releases/latest",
+    "icon": "https://avatars.githubusercontent.com/u/878437?v=4",
+    "screenshots": [],
+    "featured": false,
+    "createdAt": "2020-09-07T10:40:49Z"
+  },
+  {
     "id": "gh-58034548",
     "name": "flexbox-layout",
     "description": "Flexbox for Android ",
     "longDescription": "Flexbox for Android ",
     "stars": 18309,
-    "activityScore": 98,
+    "activityScore": 97,
     "category": "android-library",
     "tags": [
       "android-library",
@@ -420,7 +420,7 @@
     "name": "KernelSU",
     "description": "A Kernel based root solution for Android",
     "longDescription": "A Kernel based root solution for Android",
-    "stars": 17568,
+    "stars": 17591,
     "activityScore": 99,
     "category": "kernel",
     "tags": [
@@ -441,7 +441,7 @@
     "name": "komi-store",
     "description": "🩵 A free, open-source app store for developers' releases on GitHub, Codeberg & Forgejo — browse, discover, and install apps with one click. Formerly GitHub Store.",
     "longDescription": "🩵 A free, open-source app store for developers' releases on GitHub, Codeberg & Forgejo — browse, discover, and install apps with one click. Formerly GitHub Store.",
-    "stars": 17231,
+    "stars": 17267,
     "activityScore": 99,
     "category": "desktop",
     "tags": [
@@ -462,8 +462,8 @@
     "name": "anko",
     "description": "Pleasant Android application development",
     "longDescription": "Pleasant Android application development",
-    "stars": 15779,
-    "activityScore": 98,
+    "stars": 15778,
+    "activityScore": 99,
     "category": "kotlin",
     "tags": [
       "kotlin"
@@ -481,7 +481,7 @@
     "name": "Maestro",
     "description": "Painless E2E Automation for Mobile and Web",
     "longDescription": "Painless E2E Automation for Mobile and Web",
-    "stars": 15180,
+    "stars": 15193,
     "activityScore": 99,
     "category": "blackbox-testing",
     "tags": [
@@ -502,7 +502,7 @@
     "name": "ImageToolbox",
     "description": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
     "longDescription": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
-    "stars": 13985,
+    "stars": 14005,
     "activityScore": 99,
     "category": "ai",
     "tags": [
@@ -523,7 +523,7 @@
     "name": "thunderbird-android",
     "description": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
     "longDescription": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
-    "stars": 13775,
+    "stars": 13782,
     "activityScore": 99,
     "category": "communication",
     "tags": [
@@ -544,7 +544,7 @@
     "name": "LibreTube",
     "description": "An alternative frontend for YouTube, for Android.",
     "longDescription": "An alternative frontend for YouTube, for Android.",
-    "stars": 12393,
+    "stars": 12400,
     "activityScore": 99,
     "category": "kotlin",
     "tags": [
@@ -565,7 +565,7 @@
     "name": "Vector",
     "description": "Modern Xposed Framework",
     "longDescription": "Modern Xposed Framework",
-    "stars": 11940,
+    "stars": 11951,
     "activityScore": 99,
     "category": "arthook",
     "tags": [
@@ -587,7 +587,7 @@
     "description": "Image loading for Android and Compose Multiplatform.",
     "longDescription": "Image loading for Android and Compose Multiplatform.",
     "stars": 11871,
-    "activityScore": 95,
+    "activityScore": 94,
     "category": "androidx",
     "tags": [
       "androidx",
@@ -608,7 +608,7 @@
     "description": "The flexible, easy to use, all in one drawer library for your Android project. Now brand new with material 2 design.",
     "longDescription": "The flexible, easy to use, all in one drawer library for your Android project. Now brand new with material 2 design.",
     "stars": 11642,
-    "activityScore": 98,
+    "activityScore": 97,
     "category": "android-development",
     "tags": [
       "android-development",
